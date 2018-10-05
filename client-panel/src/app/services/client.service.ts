@@ -31,7 +31,7 @@ export class ClientService {
     this.clientsCollection.add(client);
   }
 
-  getClient(id: string):Observable<Client> {
+  getClient(id: string): Observable<Client> {
     this.clientDoc = this.afs.doc<Client>(`clients/${id}`);
     this.client = this.clientDoc.snapshotChanges().map(action => {
       if (action.payload.exists === false) {
@@ -49,6 +49,11 @@ export class ClientService {
   updateClient(client: Client) {
     this.clientDoc = this.afs.doc(`clients/${client.id}`);
     this.clientDoc.update(client);
+  }
+
+  deleteClient(client: Client) {
+    this.clientDoc = this.afs.doc(`clients/${client.id}`);
+    this.clientDoc.delete();
   }
 
 }
