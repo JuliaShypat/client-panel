@@ -1,6 +1,12 @@
 # ClientPanel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
+Simple CRM system.
+
+## Login
+
+Use next creadentials to login to the system or create your own account:
+email: test@test.com
+password: qwerty123
 
 ## Development server
 
