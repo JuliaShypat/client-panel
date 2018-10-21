@@ -3,6 +3,7 @@ import { ClientService } from '../../services/client.service';
 import { Client } from '../../models/Client';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
+
 @Component({
   selector: 'app-client-details',
   templateUrl: './client-details.component.html',
