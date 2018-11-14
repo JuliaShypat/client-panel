@@ -6,7 +6,7 @@ export class SettingsService {
   private settings: Settings = {
     allowRegistration: true,
     disableBalanceOnAdd: false,
-    disableBalanceOnEdit: true
+    disableBalanceOnEdit: false
   };
   constructor() { }
 
