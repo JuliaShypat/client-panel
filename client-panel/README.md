@@ -1,6 +1,6 @@
 # ClientPanel
 
-Simple CRM system.
+Simple CRM system. Live demo: https://client-panel-prod-51c58.firebaseapp.com/login
 
 ## Login
 
