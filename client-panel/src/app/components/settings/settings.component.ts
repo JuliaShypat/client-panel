@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FlashMessagesService } from 'angular2-flash-messages';
+// import { FlashMessagesService } from 'angular2-flash-messages';
 import { SettingsService } from '../../services/settings.service';
 import { Settings } from '../../models/Settings';
 
@@ -14,7 +14,7 @@ export class SettingsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private flashMessage: FlashMessagesService,
+   //  private flashMessage: FlashMessagesService,
     private settingSevice: SettingsService
   ) { }
 
@@ -24,9 +24,7 @@ export class SettingsComponent implements OnInit {
 
   onSubmit() {
     this.settingSevice.changeSettings(this.settings);
-    this.flashMessage.show('Settings Changed', {
-      cssClass: 'alert-success', timeout: 4000
-    });
+    // this.flashMessage.show('Settings Changed', {cssClass: 'alert-success', timeout: 4000});
   }
 
 }
