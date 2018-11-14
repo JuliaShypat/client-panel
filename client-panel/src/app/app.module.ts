@@ -5,7 +5,6 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { FlashMessagesModule } from 'angular2-flash-messages';
 import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
@@ -45,8 +44,7 @@ import { SettingsService } from './services/settings.service';
     AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    FormsModule,
-    FlashMessagesModule.forRoot()
+    FormsModule
   ],
   providers: [
     ClientService,
