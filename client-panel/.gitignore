@@ -41,3 +41,8 @@ yarn-error.log
 # System Files
 .DS_Store
 Thumbs.db
+.firebaserc
+firebase.json
+firestore.rules
+firestore.indexes.json
+/src/environments/**
