@@ -30,6 +30,7 @@ export class AddExerciseComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.exerciseForm.value);
     this.workoutService.addExercise(this.exerciseForm.value);
     this.exerciseForm.reset();
   }
