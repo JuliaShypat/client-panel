@@ -1,0 +1,9 @@
+<h3>Exercises List</h3>
+<app-add-exercise></app-add-exercise>
+<ul>
+  <li *ngFor="let exercise of exercises">{{exercise.name}} - {{exercise.type}}
+    <div *ngFor="let set of exercise.sets">
+      {{set.reps}} reps x {{set.weight}} kg.
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,34 @@
+<form [formGroup]="exerciseForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="exerciseName">Name</label>
+    <input type="text" class="form-control" id="exerciseName" formControlName="name" placeholder="Enter exersice name">
+  </div>
+  <div class="form-group">
+    <label for="exersiceType">Type</label>
+    <input type="text" formControlName="type" class="form-control">
+    <!-- <select class="form-control" id="exersiceType" formControlName="type">
+      <option [ngValue]="time">Time base</option>
+      <option [ngValue]="rep">Rep base</option>
+    </select> -->
+  </div>
+  <div class="form-group">
+    <div formArrayName="sets">
+      <h5>Sets</h5> <button  (click)="addSet()" type="button" class="btn btn-outline-success">Add Set</button>
+      <div *ngFor="let set of sets.controls; let i=index" class="card mt-3">
+        <div class="card-body">
+          <div [formGroupName]="i" class="form-group">          
+              <label>
+                Reps:
+              </label>
+              <input type="text" formControlName="reps" class="form-control">
+              <label>
+                Weight:
+              </label>
+              <input type="text" formControlName="weight" class="form-control">
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!exerciseForm.valid">Submit</button>
+</form>

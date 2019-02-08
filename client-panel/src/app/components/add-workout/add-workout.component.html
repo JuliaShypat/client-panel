@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/" class="btn btn-link">
+      <i class="fa fa-arrow-circle-o-left"></i> Back to dashboard</a>
+  </div>
+  <div class="col-md-6"></div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Add Workout
+  </div>
+  <div class="card-body">
+      <form #workoutForm="ngForm" (ngSubmit)="onSubmit(workoutForm)">
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input
+                type="date"
+                class="form-control"
+                name="date"
+                #workoutDate="ngModel"
+                [ngClass]="{'is-invalid':workoutDate.errors && workoutDate.touched}"
+                [(ngModel)]="workout.date"
+                required
+            >
+
+            <div [hidden]="!workoutDate.errors?.required" class="invalid-feedback">
+              Workout Date required
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label for="localization">Localization</label>
+              <input
+                  type="text"
+                  class="form-control"
+                  name="localization"
+                  #workoutLocalization="ngModel"
+                  [ngClass]="{'is-invalid':workoutLocalization.errors && workoutLocalization.touched}"
+                  [(ngModel)]="workout.localization"
+                  minlength="2"
+                  required
+              >
+
+              <div [hidden]="!workoutLocalization.errors?.required" class="invalid-feedback">
+                Last name required
+              </div>
+
+              <div [hidden]="!workoutLocalization.errors?.minlength" class="invalid-feedback">
+                  Must be at least 2 characters
+              </div>
+            </div>
+              <div class="form-group">
+                  <label for="duration">Duration</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    [(ngModel)]="workout.duration"
+                    name="duration"
+                    #workoutDuration = "ngModel"
+                  >
+                </div>
+
+              <input type="submit" value="Submit" class="btn btn-primary btn-block">
+        </form>
+  </div>
+</div>
