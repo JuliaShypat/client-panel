@@ -3,10 +3,12 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs/observable';
 import { map } from 'rxjs/operators';
 import { Workout } from '../models/Workout';
+import { Exercise } from '../models/Exercise';
 
 @Injectable()
 export class WorkoutService {
   workoutsCollection: AngularFirestoreCollection<Workout>;
+  exercisesCollection: AngularFirestoreCollection<Exercise>;
   workoutDoc: AngularFirestoreDocument<Workout>;
   workouts: Observable<Workout[]>;
   workout: Observable<Workout>;
@@ -44,6 +46,17 @@ export class WorkoutService {
     });
 
     return this.workout;
+  }
+
+  addExercise(exercise: Exercise) {
+   return this.exercisesCollection.add(exercise);
+  }
+
+  getExercises(id: string): Observable<Array<Exercise>> {
+    this.workoutDoc = this.afs.doc<Workout>(`workouts/${id}`);
+    this.exercisesCollection = this.workoutDoc.collection<Exercise>('exercises');
+    const exercises = this.exercisesCollection.valueChanges();
+    return exercises;
   }
 
   updateWorkout(client: Workout) {
