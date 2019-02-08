@@ -27,6 +27,8 @@ import { SettingsService } from './services/settings.service';
 import { WorkoutsComponent } from './components/workouts/workouts.component';
 import { WorkoutDetailsComponent } from './components/workout-details/workout-details.component';
 import { ExercisesComponent } from './components/exercises/exercises.component';
+import { AddExerciseComponent } from './components/exercises/add-exercise/add-exercise.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { ExercisesComponent } from './components/exercises/exercises.component';
     NotFoundComponent,
     WorkoutsComponent,
     WorkoutDetailsComponent,
-    ExercisesComponent
+    ExercisesComponent,
+    AddExerciseComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { ExercisesComponent } from './components/exercises/exercises.component';
     AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ClientService,

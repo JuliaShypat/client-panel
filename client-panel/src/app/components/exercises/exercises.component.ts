@@ -22,19 +22,4 @@ export class ExercisesComponent implements OnInit {
     });
   }
 
-  addNewItem() {
-    const newEx: Exercise = {
-        name: 'Dead lift',
-        sets: [
-          {reps: 12, weight: 30},
-          {reps: 10, weight: 40},
-          {reps: 8, weight: 50},
-          {reps: 6, weight: 60},
-          {reps: 4, weight: 70}
-        ],
-        type: 'rep'
-      };
-    this.workoutService.addExercise(newEx);
-  }
-
 }
