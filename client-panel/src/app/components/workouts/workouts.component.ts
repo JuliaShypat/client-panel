@@ -8,7 +8,7 @@ import { Workout } from '../../models/Workout';
   styleUrls: ['./workouts.component.css']
 })
 export class WorkoutsComponent implements OnInit {
-  workouts: Array<Workout>; // Todo: typings
+  workouts: Array<Workout>;
 
   constructor(private workoutService: WorkoutService) { }
 
